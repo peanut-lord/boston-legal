@@ -1,0 +1,17 @@
+boston-legal:
+  image: node:6-onbuild
+  container_name: "boston-legal"
+  volumes:
+    - .:/usr/src/app
+  links:
+    - redis
+  ports:
+    - 8080:8080
+  command: "npm run start"
+  working_dir: /usr/src/app
+
+redis:
+  image: redis
+  container_name: "storage"
+  ports:
+    - 6379:6379

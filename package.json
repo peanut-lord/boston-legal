@@ -1,0 +1,26 @@
+{
+  "name": "boston-legal",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "babel src -d build",
+    "start": "node build/app.js",
+    "dev": "nodemon src/*.js --exec babel-node",
+    "lint": "./node_modules/.bin/eslint src/"
+  },
+  "dependencies": {
+    "express": "^4.14.1",
+    "jsdom": "^9.11.0",
+    "redis": "^2.6.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.1.8",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "nodemon": "^1.11.0"
+  }
+}

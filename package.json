@@ -6,6 +6,7 @@
     "node": "7.5.0"
   },
   "scripts": {
+    "postinstall": "npm run build",
     "build": "babel src -d build",
     "start": "node build/app.js",
     "dev": "nodemon src/*.js --exec babel-node",

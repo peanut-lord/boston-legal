@@ -16,7 +16,7 @@ app.get(routes, cacheMiddleware, async (req, res) => {
     answer = sections.find(item => actUtil.parseSectionNumberFromSectionText(item) == req.params.section);
     if (!answer) {
       console.log(`Found nothing with URL ${req.url}`);
-      return res.send('Unknown act or section');
+      return res.send('Unknown section');
     }
   } else {
     answer = sections.join('\n');

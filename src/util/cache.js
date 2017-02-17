@@ -1,6 +1,6 @@
 module.exports = (config) => {
   const actUtil = require('./act')(config);
-  const redis = require('redis').createClient(config.redis);
+  const redis = require('redis').createClient(process.env.REDIS_URL || config.redis);
 
   const createKey = (type, paragraph, section) => [type, paragraph, section].filter(item => item !== undefined).join(':');
 

@@ -14,8 +14,11 @@
   },
   "dependencies": {
     "express": "^4.14.1",
+    "install": "^0.8.7",
     "jsdom": "^9.11.0",
-    "redis": "^2.6.5"
+    "npm": "^4.2.0",
+    "redis": "^2.6.5",
+    "sanitize-html": "^1.14.1"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",

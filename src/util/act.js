@@ -1,4 +1,5 @@
 const jsdom = require('jsdom').jsdom;
+const htmlCleaner = require('sanitize-html');
 
 module.exports = (config) => {
   const fetchAndParseActHTML = async (type, paragraph) => {
@@ -11,7 +12,12 @@ module.exports = (config) => {
 
             const items = [];
             for (const section of window.document.getElementsByClassName('jurAbsatz')) {
-              items.push(section.innerHTML);
+              const cleaned = htmlCleaner(section.innerHTML, {
+                allowedTags: [],
+                allowedAttributes: []
+              });
+              
+              items.push(cleaned);
             }
 
             resolve(items);
